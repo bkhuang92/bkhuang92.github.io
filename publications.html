@@ -4,49 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Publications | Bingkang Huang</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    * {
+    /* General styles */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    
-    body {
-      background-color: #f8f9fa;
+      background: #f8f9fa;
       color: #333;
       line-height: 1.6;
-      padding: 0;
-      margin: 0;
     }
-    
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      background: white;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    }
-    
+
     header {
       background: #2c3e50;
       color: white;
-      padding: 2rem;
       text-align: center;
+      padding: 2rem 1rem;
     }
-    
+
     h1 {
       font-size: 2.2rem;
       margin-bottom: 0.5rem;
     }
-    
+
     nav {
       background: #34495e;
       display: flex;
       justify-content: center;
       padding: 0.8rem;
     }
-    
+
     nav a {
       color: white;
       text-decoration: none;
@@ -55,105 +42,95 @@
       border-radius: 4px;
       transition: background 0.3s;
     }
-    
+
     nav a:hover {
       background: #4a6278;
     }
-    
+
     main {
+      max-width: 1000px;
+      margin: 2rem auto;
+      background: white;
       padding: 2rem;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     }
-    
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: #2c3e50;
+      color: #ecf0f1;
+    }
+
+    /* Publications specific styles */
     h2 {
       color: #2c3e50;
       margin: 2rem 0 1rem 0;
       padding-bottom: 0.5rem;
       border-bottom: 2px solid #eaeaea;
-      font-size: 1.5rem;
     }
-    
+
     .pub-list {
       list-style: none;
-      counter-reset: pub-counter;
+      counter-reset: pub-counter 19; /* Start from 19 for reverse numbering */
     }
-    
+
     .pub-item {
-      padding: 0.8rem 0.8rem 0.8rem 3rem;
-      margin-bottom: 0.8rem;
+      padding: 0.6rem 0.6rem 0.6rem 2.8rem;
+      margin-bottom: 0.6rem;
       position: relative;
-      border-left: 3px solid transparent;
+      border-left: 2px solid transparent;
       transition: all 0.2s;
     }
-    
+
     .pub-item:hover {
       background-color: #f0f4f8;
       border-left-color: #3498db;
     }
-    
+
     .pub-item::before {
-      counter-increment: pub-counter;
+      counter-increment: pub-counter -1; /* Decrement counter for reverse numbering */
       content: counter(pub-counter) ".";
       position: absolute;
       left: 0.8rem;
       font-weight: bold;
       color: #3498db;
-      width: 2.2rem;
+      width: 2rem;
       text-align: right;
     }
-    
+
     .authors {
       font-weight: 500;
       color: #2c3e50;
-    }
-    
-    .title {
-      margin: 0.3rem 0;
-      color: #34495e;
-    }
-    
-    .journal {
-      color: #16a085;
       font-size: 0.95rem;
     }
-    
+
+    .title {
+      margin: 0.2rem 0;
+      color: #34495e;
+      font-size: 0.95rem;
+    }
+
+    .journal {
+      color: #16a085;
+      font-size: 0.9rem;
+    }
+
     .details {
       color: #7f8c8d;
-      font-size: 0.9rem;
-      margin-top: 0.2rem;
+      font-size: 0.85rem;
+      margin-top: 0.1rem;
     }
-    
-    .year-filter {
-      display: flex;
-      gap: 0.5rem;
-      margin-bottom: 1rem;
-      flex-wrap: wrap;
+
+    .compact .pub-item {
+      padding: 0.5rem 0.5rem 0.5rem 2.5rem;
+      margin-bottom: 0.5rem;
     }
-    
-    .year-btn {
-      padding: 0.4rem 0.8rem;
-      background: #e8f4fc;
-      border: none;
-      border-radius: 4px;
-      color: #3498db;
-      font-size: 0.9rem;
-      cursor: pointer;
-      transition: all 0.2s;
+
+    .compact .pub-item::before {
+      left: 0.6rem;
     }
-    
-    .year-btn:hover, .year-btn.active {
-      background: #3498db;
-      color: white;
-    }
-    
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      margin-top: 2rem;
-      background: #2c3e50;
-      color: #ecf0f1;
-      font-size: 0.9rem;
-    }
-    
+
     @media (max-width: 768px) {
       nav {
         flex-direction: column;
@@ -168,7 +145,7 @@
       }
       
       .pub-item {
-        padding: 0.8rem 0.8rem 0.8rem 2.5rem;
+        padding: 0.6rem 0.6rem 0.6rem 2.5rem;
       }
       
       .pub-item::before {
@@ -178,168 +155,149 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Publications</h1>
-    </header>
+  <header>
+    <h1>Bingkang HUANG (黄丙康)</h1>
+    <p>Publications</p>
+  </header>
 
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="teaching.html">Professional Experience</a>
-      <a href="publications.html">Publications</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="teaching.html">Professional Experience</a>
+    <a href="publications.html">Publications</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
-    <main>
-      <h2>Recent Preprints</h2>
-      <ul class="pub-list">
-        <li class="pub-item">
-          <div class="authors">Huang, Bingkang; Mácha, Václav; Nečasová, Šárka</div>
-          <div class="title">On the motion of a body with a cavity filled with magnetohydrodynamic fluid</div>
-          <div class="journal">Preprint, 2024</div>
-        </li>
-        <li class="pub-item">
-          <div class="authors">Bhandari, Kuntal; Huang, Bingkang; Nečasová, Šárka</div>
-          <div class="title">Weak solutions to the heat conducting compressible self-gravitating flows in time-dependent domains</div>
-          <div class="journal">Preprint, 2024</div>
-        </li>
-      </ul>
+  <main>
+    <h2>Recent Preprints</h2>
+    <ul class="pub-list compact">
+      <li class="pub-item">
+        <div class="authors">Huang, B.; Mácha, V.; Nečasová, Š.</div>
+        <div class="title">On the motion of a body with a cavity filled with magnetohydrodynamic fluid</div>
+        <div class="journal">Preprint, 2024</div>
+      </li>
+      <li class="pub-item">
+        <div class="authors">Bhandari, K.; Huang, B.; Nečasová, Š.</div>
+        <div class="title">Weak solutions to the heat conducting compressible self-gravitating flows in time-dependent domains</div>
+        <div class="journal">Preprint, 2024</div>
+      </li>
+    </ul>
 
-      <h2>Publications</h2>
-      
-      <ol class="pub-list">
-        <li class="pub-item">
-          <div class="authors">Huang, Bingkang; Mácha, Václav; Nečasová, Šárka</div>
-          <div class="title">On the motion of a body with a cavity filled with magnetohydrodynamic fluid</div>
-          <div class="journal">J. Differential Equations</div>
-          <div class="details">398 (2024), 218–270</div>
-        </li>
-        <li class="pub-item">
-          <div class="authors">Bhandari, Kuntal; Huang, Bingkang; Nečasová, Šárka</div>
-          <div class="title">Weak solutions to the heat conducting compressible self-gravitating flows in time-dependent domains</div>
-          <div class="journal">Math. Models Methods Appl. Sci.</div>
-          <div class="details">34 (2024), no. 4, 659–704</div>
-        </li>
-        <li class="pub-item">
-          <div class="authors">Huang, Bingkang</div>
-          <div class="title">Existence and stability of dissipative measure-valued solutions to the full compressible magnetohydrodynamic flows</div>
-          <div class="journal">SIAM J. Math. Anal.</div>
-          <div class="details">56 (2024), no. 2, 2213–2247</div>
-        </li>
-        <li class="pub-item">
-          <div class="authors">Huang, Bingkang</div>
-          <div class="title">On the weak solutions to the multicomponent reactive flows driven by non-conservative boundary conditions</div>
-          <div class="journal">J. Math. Fluid Mech.</div>
-          <div class="details">26 (2024), no. 2, Paper No. 19, 27 pp</div>
-        </li>
-        <li class="pub-item">
-          <div class="authors">Huang, Bingkang; Nečasová, Šárka; Zhang, Lan</div>
-          <div class="title">On the compressible micropolar fluids in a time-dependent domain</div>
-          <div class="journal">Ann. Mat. Pura Appl. (4)</div>
-          <div class="details">201 (2022), no. 6, 2733–2795</div>
-        </li>
-        <li class="pub-item">
-          <div class="authors">Huang, Bingkang; Zhang, Lan</div>
-          <div class="title">Global well-posedness of classical solution to the interactions between short-long waves with large initial data</div>
-          <div class="journal">J. Differential Equations</div>
-          <div class="details">318 (2022), 187–229</div>
-        </li>
-        <li class="pub-item">
-          <div class="authors">Liu, Lvqiao; Huang, Bingkang; Zhang, Lan</div>
-          <div class="title">Global existence and convergence rates for the 3-D compressible micropolar equations without heat conductivity</div>
-          <div class="journal">Appl. Anal.</div>
-          <div class="details">100 (2021), no. 16, 3366–3382</div>
-        </li>
-        <li class="pub-item">
-          <div class="authors">Huang, Bingkang; Liu, Lvqiao; Zhang, Lan</div>
-          <div class="title">Global dynamics of 3-D compressible micropolar fluids with vacuum and large oscillations</div>
-          <div class="journal">J. Math. Fluid Mech.</div>
-          <div class="details">23 (2021), no. 1, Paper No. 6, 50 pp</div>
-        </li>
-        <li class="pub-item">
-          <div class="authors">Huang, Bingkang</div>
-          <div class="title">On the existence of dissipative measure-valued solutions to the compressible micropolar system</div>
-          <div class="journal">J. Math. Fluid Mech.</div>
-          <div class="details">22 (2020), no. 4, Paper No. 59, 16 pp</div>
-        </li>
-        <li class="pub-item">
-          <div class="authors">Ha, Seung-Yeal; Huang, Bingkang; Xiao, Qinghua; Zhang, Xiongtao</div>
-          <div class="title">A global existence of classical solutions to the two-dimensional kinetic-fluid model for flocking with large initial data</div>
-          <div class="journal">Commun. Pure Appl. Anal.</div>
-          <div class="details">19 (2020), no. 2, 835–882</div>
-        </li>
-        <li class="pub-item">
-          <div class="authors">Huang, Bingkang; Liu, Lvqiao; Zhang, Lan</div>
-          <div class="title">On the existence of global strong solutions to 2D compressible Navier-Stokes-Smoluchowski equations with large initial data</div>
-          <div class="journal">Nonlinear Anal. Real World Appl.</div>
-          <div class="details">49 (2019), 169–195</div>
-        </li>
-        <li class="pub-item">
-          <div class="authors">Huang, Bingkang; Zhang, Lan</div>
-          <div class="title">A global existence of classical solutions to the two-dimensional Vlasov-Fokker-Planck and magnetohydrodynamics equations with large initial data</div>
-          <div class="journal">Kinet. Relat. Models</div>
-          <div class="details">12 (2019), no. 2, 357–396</div>
-        </li>
-        <li class="pub-item">
-          <div class="authors">Huang, Bingkang; Zhang, Lan</div>
-          <div class="title">Asymptotic stability of planar rarefaction wave to 3D radiative hydrodynamics</div>
-          <div class="journal">Nonlinear Anal. Real World Appl.</div>
-          <div class="details">46 (2019), 43–57</div>
-        </li>
-        <li class="pub-item">
-          <div class="authors">Huang, Bingkang; Zhang, Lan</div>
-          <div class="title">A regularity criterion of strong solutions to the 2D Cauchy problem of the kinetic-fluid model for flocking</div>
-          <div class="journal">Commun. Math. Sci.</div>
-          <div class="details">16 (2018), no. 7, 1827–1847</div>
-        </li>
-        <li class="pub-item">
-          <div class="authors">Huang, Bingkang; Tang, Shaojun; Zhang, Lan</div>
-          <div class="title">Nonlinear stability of viscous shock profiles for compressible Navier-Stokes equations with temperature-dependent transport coefficients and large initial perturbation</div>
-          <div class="journal">Z. Angew. Math. Phys.</div>
-          <div class="details">69 (2018), no. 6, Paper No. 136, 35 pp</div>
-        </li>
-        <li class="pub-item">
-          <div class="authors">Ha, Seung-Yeal; Huang, Bingkang; Xiao, Qinghua; Zhang, Xiongtao</div>
-          <div class="title">On the global solvability of the coupled kinetic-fluid system for flocking with large initial data</div>
-          <div class="journal">Math. Models Methods Appl. Sci.</div>
-          <div class="details">28 (2018), no. 1, 1–60</div>
-        </li>
-        <li class="pub-item">
-          <div class="authors">Huang, Bingkang; Liao, Yongkai</div>
-          <div class="title">Global stability of combination of viscous contact wave with rarefaction wave for compressible Navier-Stokes equations with temperature-dependent viscosity</div>
-          <div class="journal">Math. Models Methods Appl. Sci.</div>
-          <div class="details">27 (2017), no. 12, 2321–2379</div>
-        </li>
-        <li class="pub-item">
-          <div class="authors">Huang, Bingkang; Wang, Lusheng; Xiao, Qinghua</div>
-          <div class="title">Global nonlinear stability of rarefaction waves for compressible Navier-Stokes equations with temperature and density dependent transport coefficients</div>
-          <div class="journal">Kinet. Relat. Models</div>
-          <div class="details">9 (2016), no. 3, 469–514</div>
-        </li>
-      </ol>
-    </main>
+    <h2>Publications</h2>
+    
+    <ol class="pub-list compact">
+      <li class="pub-item">
+        <div class="authors">Huang, B.; Mácha, V.; Nečasová, Š.</div>
+        <div class="title">On the motion of a body with a cavity filled with magnetohydrodynamic fluid</div>
+        <div class="journal">J. Differential Equations</div>
+        <div class="details">398 (2024), 218–270</div>
+      </li>
+      <li class="pub-item">
+        <div class="authors">Bhandari, K.; Huang, B.; Nečasová, Š.</div>
+        <div class="title">Weak solutions to the heat conducting compressible self-gravitating flows in time-dependent domains</div>
+        <div class="journal">Math. Models Methods Appl. Sci.</div>
+        <div class="details">34 (2024), no. 4, 659–704</div>
+      </li>
+      <li class="pub-item">
+        <div class="authors">Huang, B.</div>
+        <div class="title">Existence and stability of dissipative measure-valued solutions to the full compressible magnetohydrodynamic flows</div>
+        <div class="journal">SIAM J. Math. Anal.</div>
+        <div class="details">56 (2024), no. 2, 2213–2247</div>
+      </li>
+      <li class="pub-item">
+        <div class="authors">Huang, B.</div>
+        <div class="title">On the weak solutions to the multicomponent reactive flows driven by non-conservative boundary conditions</div>
+        <div class="journal">J. Math. Fluid Mech.</div>
+        <div class="details">26 (2024), no. 2, Paper No. 19, 27 pp</div>
+      </li>
+      <li class="pub-item">
+        <div class="authors">Huang, B.; Nečasová, Š.; Zhang, L.</div>
+        <div class="title">On the compressible micropolar fluids in a time-dependent domain</div>
+        <div class="journal">Ann. Mat. Pura Appl. (4)</div>
+        <div class="details">201 (2022), no. 6, 2733–2795</div>
+      </li>
+      <li class="pub-item">
+        <div class="authors">Huang, B.; Zhang, L.</div>
+        <div class="title">Global well-posedness of classical solution to the interactions between short-long waves with large initial data</div>
+        <div class="journal">J. Differential Equations</div>
+        <div class="details">318 (2022), 187–229</div>
+      </li>
+      <li class="pub-item">
+        <div class="authors">Liu, L.; Huang, B.; Zhang, L.</div>
+        <div class="title">Global existence and convergence rates for the 3-D compressible micropolar equations without heat conductivity</div>
+        <div class="journal">Appl. Anal.</div>
+        <div class="details">100 (2021), no. 16, 3366–3382</div>
+      </li>
+      <li class="pub-item">
+        <div class="authors">Huang, B.; Liu, L.; Zhang, L.</div>
+        <div class="title">Global dynamics of 3-D compressible micropolar fluids with vacuum and large oscillations</div>
+        <div class="journal">J. Math. Fluid Mech.</div>
+        <div class="details">23 (2021), no. 1, Paper No. 6, 50 pp</div>
+      </li>
+      <li class="pub-item">
+        <div class="authors">Huang, B.</div>
+        <div class="title">On the existence of dissipative measure-valued solutions to the compressible micropolar system</div>
+        <div class="journal">J. Math. Fluid Mech.</div>
+        <div class="details">22 (2020), no. 4, Paper No. 59, 16 pp</div>
+      </li>
+      <li class="pub-item">
+        <div class="authors">Ha, S.-Y.; Huang, B.; Xiao, Q.; Zhang, X.</div>
+        <div class="title">A global existence of classical solutions to the two-dimensional kinetic-fluid model for flocking with large initial data</div>
+        <div class="journal">Commun. Pure Appl. Anal.</div>
+        <div class="details">19 (2020), no. 2, 835–882</div>
+      </li>
+      <li class="pub-item">
+        <div class="authors">Huang, B.; Liu, L.; Zhang, L.</div>
+        <div class="title">On the existence of global strong solutions to 2D compressible Navier-Stokes-Smoluchowski equations with large initial data</div>
+        <div class="journal">Nonlinear Anal. Real World Appl.</div>
+        <div class="details">49 (2019), 169–195</div>
+      </li>
+      <li class="pub-item">
+        <div class="authors">Huang, B.; Zhang, L.</div>
+        <div class="title">A global existence of classical solutions to the two-dimensional Vlasov-Fokker-Planck and magnetohydrodynamics equations with large initial data</div>
+        <div class="journal">Kinet. Relat. Models</div>
+        <div class="details">12 (2019), no. 2, 357–396</div>
+      </li>
+      <li class="pub-item">
+        <div class="authors">Huang, B.; Zhang, L.</div>
+        <div class="title">Asymptotic stability of planar rarefaction wave to 3D radiative hydrodynamics</div>
+        <div class="journal">Nonlinear Anal. Real World Appl.</div>
+        <div class="details">46 (2019), 43–57</div>
+      </li>
+      <li class="pub-item">
+        <div class="authors">Huang, B.; Zhang, L.</div>
+        <div class="title">A regularity criterion of strong solutions to the 2D Cauchy problem of the kinetic-fluid model for flocking</div>
+        <div class="journal">Commun. Math. Sci.</div>
+        <div class="details">16 (2018), no. 7, 1827–1847</div>
+      </li>
+      <li class="pub-item">
+        <div class="authors">Huang, B.; Tang, S.; Zhang, L.</div>
+        <div class="title">Nonlinear stability of viscous shock profiles for compressible Navier-Stokes equations with temperature-dependent transport coefficients and large initial perturbation</div>
+        <div class="journal">Z. Angew. Math. Phys.</div>
+        <div class="details">69 (2018), no. 6, Paper No. 136, 35 pp</div>
+      </li>
+      <li class="pub-item">
+        <div class="authors">Ha, S.-Y.; Huang, B.; Xiao, Q.; Zhang, X.</div>
+        <div class="title">On the global solvability of the coupled kinetic-fluid system for flocking with large initial data</div>
+        <div class="journal">Math. Models Methods Appl. Sci.</div>
+        <div class="details">28 (2018), no. 1, 1–60</div>
+      </li>
+      <li class="pub-item">
+        <div class="authors">Huang, B.; Liao, Y.</div>
+        <div class="title">Global stability of combination of viscous contact wave with rarefaction wave for compressible Navier-Stokes equations with temperature-dependent viscosity</div>
+        <div class="journal">Math. Models Methods Appl. Sci.</div>
+        <div class="details">27 (2017), no. 12, 2321–2379</div>
+      </li>
+      <li class="pub-item">
+        <div class="authors">Huang, B.; Wang, L.; Xiao, Q.</div>
+        <div class="title">Global nonlinear stability of rarefaction waves for compressible Navier-Stokes equations with temperature and density dependent transport coefficients</div>
+        <div class="journal">Kinet. Relat. Models</div>
+        <div class="details">9 (2016), no. 3, 469–514</div>
+      </li>
+    </ol>
+  </main>
 
-    <footer>
-      <p>&copy; 2025 Bingkang Huang | Last updated: August 2025</p>
-    </footer>
-  </div>
-
-  <script>
-    // 简单的年份筛选功能
-    document.querySelectorAll('.year-btn').forEach(button => {
-      button.addEventListener('click', function() {
-        // 移除所有按钮的active类
-        document.querySelectorAll('.year-btn').forEach(btn => {
-          btn.classList.remove('active');
-        });
-        
-        // 为当前点击的按钮添加active类
-        this.classList.add('active');
-        
-        // 这里可以添加实际的筛选逻辑
-        // 目前只是UI演示
-      });
-    });
-  </script>
+  <footer>
+    <p>&copy; 2025 Bingkang Huang</p>
+  </footer>
 </body>
 </html>
