@@ -72,7 +72,7 @@
 
     .pub-list {
       list-style: none;
-      counter-reset: pub-counter;
+      counter-reset: pub-counter 19; /* 设置初始计数器值为总项数+1 */
     }
 
     .pub-item {
@@ -89,7 +89,7 @@
     }
 
     .pub-item::before {
-      counter-increment: pub-counter;
+      counter-increment: pub-counter -1; /* 递减计数器 */
       content: counter(pub-counter) ".";
       position: absolute;
       left: 0.8rem;
@@ -174,8 +174,7 @@
 </head>
 <body>
   <header>
-    <h1>Bingkang HUANG (黄丙康)</h1>
-    <p>Publications</p>
+    <h1>Publications</h1>
   </header>
 
   <nav>
