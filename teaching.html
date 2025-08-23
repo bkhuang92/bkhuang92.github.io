@@ -3,12 +3,191 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Research | My Academic Site</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Professional Experience | My Academic Site</title>
+  <style>
+    /* General styles */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    nav {
+      background: #34495e;
+      display: flex;
+      justify-content: center;
+      padding: 0.8rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1.2rem;
+      margin: 0 0.5rem;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background: #4a6278;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: #2c3e50;
+      color: #ecf0f1;
+    }
+
+    /* Experience specific styles */
+    h2 {
+      color: #2c3e50;
+      margin: 2rem 0 1rem 0;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #eaeaea;
+    }
+
+    .experience-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0;
+    }
+
+    .experience-item {
+      padding: 1.2rem;
+      margin-bottom: 1rem;
+      border-left: 4px solid #3498db;
+      background: #f8f9fa;
+      border-radius: 0 5px 5px 0;
+      transition: all 0.3s ease;
+    }
+
+    .experience-item:hover {
+      background: #edf2f7;
+      transform: translateX(5px);
+    }
+
+    .experience-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .position {
+      font-weight: 600;
+      color: #2c3e50;
+      font-size: 1.1rem;
+    }
+
+    .date {
+      color: #7f8c8d;
+      font-size: 0.95rem;
+      background: #e0e6ed;
+      padding: 0.3rem 0.8rem;
+      border-radius: 15px;
+    }
+
+    .institution {
+      color: #16a085;
+      font-size: 0.95rem;
+      margin-top: 0.3rem;
+    }
+
+    .education-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0;
+    }
+
+    .education-item {
+      padding: 1rem 1.2rem;
+      margin-bottom: 0.8rem;
+      border-left: 4px solid #16a085;
+      background: #f8f9fa;
+      border-radius: 0 5px 5px 0;
+      transition: all 0.3s ease;
+    }
+
+    .education-item:hover {
+      background: #edf2f7;
+      transform: translateX(5px);
+    }
+
+    .degree {
+      font-weight: 600;
+      color: #2c3e50;
+      font-size: 1.05rem;
+    }
+
+    .school {
+      color: #16a085;
+      font-size: 0.95rem;
+      margin-top: 0.3rem;
+    }
+
+    .period {
+      color: #7f8c8d;
+      font-size: 0.9rem;
+      margin-top: 0.3rem;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 0.5rem;
+      }
+      
+      nav a {
+        margin: 0.3rem 0;
+        width: 100%;
+        text-align: center;
+      }
+      
+      main {
+        padding: 1.5rem;
+        margin: 1rem;
+      }
+      
+      .experience-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .date {
+        margin-top: 0.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>Professional experience</h1>
+    <h1>Professional Experience</h1>
   </header>
 
   <nav>
@@ -19,31 +198,43 @@
   </nav>
 
   <main>
-    <h2>Work experience </h2>
-    <ul>
-      <li>
-        <div>
-          <span style="float:left;">Hefei Univeristy of Technology, Associate Professor</span>
-          <span style="float:right;">2021.12--now</span>
-        </div> 
+    <h2>Work Experience</h2>
+    <ul class="experience-list">
+      <li class="experience-item">
+        <div class="experience-header">
+          <span class="position">Associate Professor</span>
+          <span class="date">2021.12 - Present</span>
+        </div>
+        <div class="institution">Hefei University of Technology</div>
       </li>
-      <li>
-        <div>
-          <span style="float:left;">Institute of Mathematics CAS, Visiting Scholar</span>
-          <span style="float:right;">2022.11--2024.11</span>
-        </div> 
+      <li class="experience-item">
+        <div class="experience-header">
+          <span class="position">Visiting Scholar</span>
+          <span class="date">2022.11 - 2024.11</span>
+        </div>
+        <div class="institution">Institute of Mathematics CAS</div>
       </li>
-      <li>
-        <div>
-          <span style="float:left;">Hefei Univeristy of Technology, Assistant Professor</span>
-          <span style="float:right;">2018.06--2021.11</span>
-        </div> 
+      <li class="experience-item">
+        <div class="experience-header">
+          <span class="position">Assistant Professor</span>
+          <span class="date">2018.06 - 2021.11</span>
+        </div>
+        <div class="institution">Hefei University of Technology</div>
       </li>
     </ul>
-    <h2>Eduation</h2>
-    <ul>
-      <li> Wuhan Univeristy, (2013--2018), PhD</li>
-      <li> Anhui Normal University, (2009--2013), Bachelor of Mathematics</li>
+    
+    <h2>Education</h2>
+    <ul class="education-list">
+      <li class="education-item">
+        <div class="degree">PhD in Mathematics</div>
+        <div class="school">Wuhan University</div>
+        <div class="period">2013 - 2018</div>
+      </li>
+      <li class="education-item">
+        <div class="degree">Bachelor of Mathematics</div>
+        <div class="school">Anhui Normal University</div>
+        <div class="period">2009 - 2013</div>
+      </li>
     </ul>
   </main>
 
