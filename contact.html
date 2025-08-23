@@ -1,10 +1,118 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | My Academic Site</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    /* General styles */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    nav {
+      background: #34495e;
+      display: flex;
+      justify-content: center;
+      padding: 0.8rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1.2rem;
+      margin: 0 0.5rem;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background: #4a6278;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: #2c3e50;
+      color: #ecf0f1;
+    }
+
+    /* Contact specific styles */
+    h2 {
+      color: #2c3e50;
+      margin: 2rem 0 1rem 0;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #eaeaea;
+    }
+
+    .contact-info {
+      margin: 1.5rem 0;
+    }
+
+    .contact-item {
+      margin-bottom: 1.2rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .contact-item:before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #3498db;
+      font-weight: bold;
+    }
+
+    .email {
+      color: #2980b9;
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 0.5rem;
+      }
+      
+      nav a {
+        margin: 0.3rem 0;
+        width: 100%;
+        text-align: center;
+      }
+      
+      main {
+        padding: 1.5rem;
+        margin: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -20,8 +128,15 @@
 
   <main>
     <h2>Get in Touch</h2>
-    <p>bkhuang92@hotmail.com / bkhuang@whu.edu.cn</p>
-      <p>office room:1804(west door), 18/F, Kejiao Building</p>
+    <div class="contact-info">
+      <div class="contact-item">
+        <span class="email">bkhuang92@hotmail.com</span> / 
+        <span class="email">bkhuang@whu.edu.cn</span>
+      </div>
+      <div class="contact-item">
+        Office room: 1804 (west door), 18/F, Kejiao Building
+      </div>
+    </div>
   </main>
 
   <footer>&copy; 2025 Bingkang Huang</footer>
