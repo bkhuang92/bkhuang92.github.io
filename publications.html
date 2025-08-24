@@ -53,6 +53,7 @@
       background: white;
       padding: 2rem;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
     }
 
     footer {
@@ -72,77 +73,55 @@
 
     .pub-list {
       list-style: none;
-      counter-reset: pub-counter 19; /* 设置初始计数器值为总项数+1 */
+      padding: 0;
+      margin: 1.5rem 0;
     }
 
     .pub-item {
-      padding: 0.6rem 0.6rem 0.6rem 2.8rem;
-      margin-bottom: 0.6rem;
-      position: relative;
-      border-left: 2px solid transparent;
-      transition: all 0.2s;
+      padding: 1rem 0;
+      margin-bottom: 0.5rem;
+      border-bottom: 1px solid #eee;
     }
 
-    .pub-item:hover {
-      background-color: #f0f4f8;
-      border-left-color: #3498db;
-    }
-
-    .pub-item::before {
-      counter-increment: pub-counter -1; /* 递减计数器 */
-      content: counter(pub-counter) ".";
-      position: absolute;
-      left: 0.8rem;
-      font-weight: bold;
-      color: #3498db;
-      width: 2rem;
-      text-align: right;
+    .pub-item:last-child {
+      border-bottom: none;
     }
 
     .authors {
       font-weight: 500;
       color: #2c3e50;
       font-size: 0.95rem;
+      margin-bottom: 0.3rem;
     }
 
     .title {
-      margin: 0.2rem 0;
+      margin: 0.4rem 0;
       color: #34495e;
       font-size: 0.95rem;
+      font-weight: 600;
     }
 
     .journal {
       color: #16a085;
       font-size: 0.9rem;
+      margin-bottom: 0.3rem;
     }
 
     .details {
       color: #7f8c8d;
       font-size: 0.85rem;
-      margin-top: 0.1rem;
+      margin-bottom: 0.3rem;
     }
 
-    /* No numbering for preprints */
-    .no-numbers {
-      list-style: none;
-      padding-left: 0;
-    }
-    
-    .no-numbers .pub-item {
-      padding-left: 0.6rem;
-    }
-    
-    .no-numbers .pub-item::before {
-      content: none;
+    .links a {
+      color: #3498db;
+      text-decoration: none;
+      font-size: 0.85rem;
+      margin-right: 1rem;
     }
 
-    .compact .pub-item {
-      padding: 0.5rem 0.5rem 0.5rem 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .compact .pub-item::before {
-      left: 0.6rem;
+    .links a:hover {
+      text-decoration: underline;
     }
 
     @media (max-width: 768px) {
@@ -158,16 +137,9 @@
         text-align: center;
       }
       
-      .pub-item {
-        padding: 0.6rem 0.6rem 0.6rem 2.5rem;
-      }
-      
-      .pub-item::before {
-        left: 0.5rem;
-      }
-      
-      .no-numbers .pub-item {
-        padding-left: 0.6rem;
+      main {
+        padding: 1.5rem;
+        margin: 1rem;
       }
     }
   </style>
@@ -186,13 +158,14 @@
 
   <main>
     <h2>Preprints</h2>
-    <ul class="pub-list no-numbers compact">
+    <ul class="pub-list">
       <li class="pub-item">
         <div class="authors">Huang, Bingkang; Perisetti, Mahendranath</div>
         <div class="title">Time-periodic solutions to the full compressible magnetohydrodynamic flows with non-homogeneous Dirichlet boundary conditions</div>
         <div class="journal">Preprint, 2025</div>
-         <div class="links">
-          <a href="chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://www.math.cas.cz/public/storage/preprints/IM_20250721012554.pdf" target="_blank">PDF</a>
+        <div class="links">
+          <a href="https://www.math.cas.cz/public/storage/preprints/IM_20250721012554.pdf" target="_blank">PDF</a>
+        </div>
       </li>
       <li class="pub-item">
         <div class="authors">Bhandari, Kuntal; Huang, Bingkang; Nečasová, Šárka</div>
@@ -201,13 +174,11 @@
         <div class="links">
           <a href="https://arxiv.org/abs/2505.23539" target="_blank">View on arXiv</a>
         </div>
-      </div>
       </li>
     </ul>
 
     <h2>Publications</h2>
-    
-    <ol class="pub-list compact">
+    <ul class="pub-list">
       <li class="pub-item">
         <div class="authors">Huang, Bingkang; Mácha, Václav; Nečasová, Šárka</div>
         <div class="title">On the motion of a body with a cavity filled with magnetohydrodynamic fluid</div>
@@ -316,7 +287,7 @@
         <div class="journal">Kinet. Relat. Models</div>
         <div class="details">9 (2016), no. 3, 469–514</div>
       </li>
-    </ol>
+    </ul>
   </main>
 
   <footer>
