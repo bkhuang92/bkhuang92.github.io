@@ -60,14 +60,6 @@
       padding: 1.5rem;
       background: #2c3e50;
       color: #ecf0f1;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .visit-count {
-      font-size: 0.9rem;
-      opacity: 0.8;
     }
 
     /* Home page styles */
@@ -155,30 +147,6 @@
 
   <footer>
     <div>&copy; 2025 Bingkang Huang</div>
-    <div class="visit-count">Page Visits: <span id="visitCount">0</span></div>
   </footer>
-
-  <script>
-    // 访问次数计数器
-    document.addEventListener('DOMContentLoaded', function() {
-      // 检查是否支持localStorage
-      if (typeof(Storage) !== "undefined") {
-        // 获取当前访问次数或初始化为0
-        let visitCount = localStorage.getItem('pageVisitCount') || 0;
-        
-        // 增加访问次数
-        visitCount++;
-        
-        // 保存更新后的访问次数
-        localStorage.setItem('pageVisitCount', visitCount);
-        
-        // 更新页面显示
-        document.getElementById('visitCount').textContent = visitCount;
-      } else {
-        // 如果不支持localStorage，显示提示信息
-        document.getElementById('visitCount').textContent = "Not supported";
-      }
-    });
-  </script>
 </body>
 </html>
